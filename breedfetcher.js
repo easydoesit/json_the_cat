@@ -16,11 +16,11 @@ const fetchBreedDescription = function(breedName, callback) {
       const data = JSON.parse(body);
   
       if (data.length === 0) {
-        callback("Sorry, that breed was not found", null);
+        const sorry = "Sorry, that breed was not found";
+        callback(null, sorry);
         return;
       }
-      desc = data[0].description;
-      callback(null, desc);
+      callback(null, data[0].description);
     }
   });
 };
